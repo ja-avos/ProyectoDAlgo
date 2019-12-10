@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class P2 {
+public class Problema2 {
 	
 	 static class Ordenador implements Comparable<Ordenador>
 		{
@@ -30,6 +30,7 @@ public class P2 {
 			}
 			
 		}
+	 // adaptado de geekforgeeks
 	 static int techo(int A[], int l, int r, int key) 
 	    { 
 	        while (r - l > 1) { 
@@ -43,12 +44,11 @@ public class P2 {
 	        return r; 
 	    } 
 	  
-	    static void LongestIncreasingSubsequenceLength(ArrayList<Ordenador> ord) 
+	    static void LIS(ArrayList<Ordenador> ord) 
 	    { 
-	        // Add boundary case, when array size is one 
 	  
 	        int[] tailTable = new int[ord.size()]; 
-	        int len; // always points empty slot 
+	        int len; 
 	        
 	        int[] arre = new int[ord.size()];
 	  
@@ -107,7 +107,6 @@ public class P2 {
 			while(n!=0)
 			{
 				ArrayList<Ordenador> ord = new ArrayList<Ordenador>();
-				//Mientras  que el número leído correspondiente al número de elementos en el array no sea 0...
 				for(int i =0; i<n; ++i)
 				{
 					String[] data = br.readLine().split(" ");
@@ -115,7 +114,7 @@ public class P2 {
 				}
 				Collections.sort(ord);
 	
-				LongestIncreasingSubsequenceLength(ord);
+				LIS(ord);
 				n = Integer.parseInt(br.readLine());
 				if(n==0)
 					break;
